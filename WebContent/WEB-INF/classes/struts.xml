@@ -21,8 +21,9 @@
     	  <result name="success" type="tiles">starttile</result>
       </action>
       
-       <action name="registeraction" class="ebay.iiitb.registration.action.RegistrationAction">
-    	  <result name="success" type="tiles">starttile</result>
+       <action name="registeraction" class="ebay.iiitb.registration.RegistrationAction">
+    	  <result name="success" >/Registersuccess.jsp</result>
+    	  <result name="error"  >/Registerfailure.jsp</result>
       </action>
  
  <!-- Done  -->

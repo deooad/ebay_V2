@@ -15,4 +15,10 @@
 	 <definition name="starttile" extends="baseLayout" >
 	   	<put-attribute name="body" value="/home_body.jsp" />
 	</definition>
+	 <definition name="registersuccess" extends="baseLayout" >
+	   	<put-attribute name="body" value="/Registersuccess.jsp" />
+	</definition>
+	<definition name="registerfailure" extends="baseLayout" >
+	   	<put-attribute name="body" value="/Registerfailure.jsp" />
+	</definition>
 </tiles-definitions>

@@ -1,5 +1,9 @@
 package ebay.iiitb.registration;
-
+/**
+ * 
+ * @author sindhu
+ *
+ */
 public class RegistrationModel {
 	private String email_first;
 	private String email_confirm;
@@ -7,6 +11,13 @@ public class RegistrationModel {
 	private String fname;
 	private String lname;
 	private String username;
+	private String u_surkey;
+	public String getU_surkey() {
+		return u_surkey;
+	}
+	public void setU_surkey(String u_surkey) {
+		this.u_surkey = u_surkey;
+	}
 	public String getUsername() {
 		return username;
 	}
