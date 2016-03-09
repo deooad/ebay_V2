@@ -5,6 +5,8 @@
 <struts>
 		
    <package name="default" extends="struts-default">
+   
+   <!-- edited by sindhu and sudha  -->
       <result-types>
          <result-type name="tiles" 
          class="org.apache.struts2.views.tiles.TilesResult" />
@@ -18,7 +20,12 @@
       <action name="start" class="entryAction.EntryAction">
     	  <result name="success" type="tiles">starttile</result>
       </action>
+      
+       <action name="registeraction" class="ebay.iiitb.registration.action.RegistrationAction">
+    	  <result name="success" type="tiles">starttile</result>
+      </action>
  
+ <!-- Done  -->
    </package>
    
 </struts>

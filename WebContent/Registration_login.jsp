@@ -124,7 +124,7 @@
           </ul>
   <div id="signup" class="tab-pane fade in active" style="display:inline">
       
-      <form action="/" method="post" id="register">
+      <form action="registeraction" method="post" id="register">
       
               <input type="text" id="email" name="email_first" placeholder="Email" required="required"/> 
       
