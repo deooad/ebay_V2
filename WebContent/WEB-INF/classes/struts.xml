@@ -29,6 +29,11 @@
       <action name="headerr" class="ebay.iiitb.home.HeaderAction">
     	  <result name="success" >/header.jsp</result>
       </action>
+      
+       <action name="get" class="ebay.iiitb.dealsandcategories.PopulateDealsAction">
+    	  <result name="success" type="tiles">dealstile</result>
+      </action>
+    
     
        <action name="emailcheckAction" class="ebay.iiitb.registration.emailCheckAction">
     	 <result type="json">

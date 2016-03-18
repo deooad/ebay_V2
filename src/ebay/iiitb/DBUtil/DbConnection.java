@@ -8,7 +8,7 @@ import java.sql.*;
 public class DbConnection {
 
 	final static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	final static String DB_URL = "jdbc:mysql://localhost:3306/ecommerce";
+	final static String DB_URL = "jdbc:mysql://localhost:3306/EBay";
 	final static String USER = "root";
 	final static String PASS = "";
 	public Connection con=null;

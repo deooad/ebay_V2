@@ -21,4 +21,7 @@
 	<definition name="registerfailure" extends="baseLayout" >
 	   	<put-attribute name="body" value="/Registerfailure.jsp" />
 	</definition>
+	<definition name="dealstile" extends="baseLayout" >
+	   	<put-attribute name="body" value="/displaytopcategories.jsp" />
+	</definition>
 </tiles-definitions>
