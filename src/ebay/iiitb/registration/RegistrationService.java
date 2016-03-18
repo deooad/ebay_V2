@@ -11,6 +11,8 @@ import java.sql.*;
  */
 
 public class RegistrationService {
+	
+	
 
 	public boolean register(RegistrationModel registrationModel){
 		
@@ -32,7 +34,7 @@ public class RegistrationService {
 		
 		//Query to insert Username
 		
-		String insertusername="update user set username=? where u_surkey=?";
+		String insertusername="update user set user_id=? where u_surkey=?";
 		
 		
 		try

@@ -25,6 +25,12 @@
     	  <result name="success" >/Registersuccess.jsp</result>
     	  <result name="error"  >/Registerfailure.jsp</result>
       </action>
+       <action name="emailcheckAction" class="ebay.iiitb.registration.emailCheckAction">
+    	 <result type="json">
+        <param name="excludeNullProperties">true</param>
+        <param name="noCache">true</param>
+	   </result>
+	   </action>
  
  <!-- Done  -->
    </package>

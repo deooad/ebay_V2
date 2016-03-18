@@ -104,7 +104,15 @@
   $(function() {
     $( "#tabs" ).tabs();
   });
-  
+  function checkemail(obj){
+		$.getJSON('emailcheckAction',{'email_first': obj.value}, function(data) {
+					
+			alert("Email already exists .Please enter another email");
+				
+				
+			
+		});
+}
   </script>
 </head>
 <body>
@@ -126,7 +134,7 @@
       
       <form action="registeraction" method="post" id="register">
       
-              <input type="text" id="email" name="email_first" placeholder="Email" required="required"/> 
+              <input type="text" id="email" name="email_first" placeholder="Email" onchange="checkemail(this)" required="required"/> 
       
               <input type="text" id="remail" name="email_confirm" placeholder="Reenter Email" required="required"/>  
       
