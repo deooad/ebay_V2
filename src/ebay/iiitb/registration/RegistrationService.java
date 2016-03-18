@@ -12,7 +12,31 @@ import java.sql.*;
 
 public class RegistrationService {
 	
-	
+	public String checkEmailService(String email) {
+		boolean status=false;
+		DbConnection db = new DbConnection();
+		Connection con = db.getConnection();
+		ResultSet rs;
+		PreparedStatement ps;
+		String username=null;
+		// Query to check email exists or not
+		String checkemail="select * from user where email=?";
+		
+		try {
+			ps=con.prepareStatement(checkemail);
+			ps.setString(1, email);
+			rs=ps.executeQuery();
+			while (rs.next()) {
+				
+				username=rs.getString(7);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return username;
+		
+	}
 
 	public boolean register(RegistrationModel registrationModel){
 		

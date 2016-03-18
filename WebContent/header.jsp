@@ -1,4 +1,7 @@
+
 <!DOCTYPE html>
+<%@ taglib prefix="s" uri = "/struts-tags" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html lang="en">
 <head>
   <title>Bootstrap Case</title>
@@ -63,7 +66,7 @@
           float: left;
    		 }
    		 #searchInput{
-   		 	width: 120%;
+   		 	width: 109%;
    		 	margin-top: 7px;
    		 	margin-right: 0px;
    		 	padding-right: 0px;
@@ -73,6 +76,7 @@
    		 	margin-left: 40px;
    		 	padding-left: 10px;
    		 	margin-right: 60px;
+   		 	width:10%;
    		 	display: inline;
    		 }
    		 #search{
@@ -86,6 +90,61 @@
    		 	margin-left: 0px;
    		 	padding-left: 0px;
    		 }
+   		 
+   		 #main{
+   		 	margin-top:7px;
+   		 	height:35px;
+   		 	width:120%;
+   		 }
+   		 
+   		 
+   		 
+   		 
+   		 	.list-unstyled{
+			padding-top: 10px;
+    		padding-right: 10px;
+    		padding-bottom: 10px;
+    		padding-left: 10px;
+    		width : 250px;
+    		height: auto;
+    		
+	}
+	.top{
+			font-size: 15px;
+			font-weight: bold;
+	}
+	#drop{
+    		font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    		 height: auto;
+    		 width:  auto;
+    		 max-width: 800px;
+    		 max-height: 500px;
+    		 overflow-x: auto;
+    		 overflow-y: auto;    		
+	     }
+	 .cat {
+	 	font-size: 15px;
+	 	font-color: DarkSlateGray;
+	 	align-self: top;
+	 }
+		     a:link {
+	    color: DarkSlateGray;
+	}
+
+			/* visited link */
+			a:visited {
+			    color: DarkSlateGray;
+			}
+			
+			/* mouse over link */
+			a:hover {
+			    color: blue;
+			}
+			
+			/* selected link */
+			a:active {
+			    color: blue;
+			}
   </style>
 </head>
 <body>
@@ -97,33 +156,34 @@
     	<li id="lregister"><a href="#" id="aregister"style="margin-right:0px;paddin-right:0px" >Register(seller)</a></li>
 
     	<li class="dropdown" id="lshop">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="margin-left:0px;paddin-left:0px">Shop by category <strong class="caret"></strong></a>
+			
 								
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#">Web Design</a>
-									</li>
-									
-									<li>
-										<a href="#">Web Development</a>
-									</li>
-									
-									<li>
-										<a href="#">SEO</a>
-									</li>
-									
-									<li class="divider"></li>
-									
-									<li class="dropdown-header">More Services</li>
-									
-									<li>
-										<a href="#">Content Creation</a>
-									</li>
-									
-									<li>
-										<a href="#">Social Media Marketing</a>
-									</li>
-								</ul><!-- end dropdown-menu -->
+					<s:set var="size" value="categories.size()"/>
+					<s:set var="rows" value="categories.size()/3"/>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Shop by Category<span class="caret"></span></a>
+					<table class="dropdown-menu" id="drop">
+					<tr>
+					<s:set var="count" value="0"/>
+					<s:set var="size" value="categories.size()"/>
+					
+					<s:iterator value="categories.keySet().toArray()">		
+					<td>
+					<s:if test="%{#count < #size}">
+					<s:iterator value="categories.keySet().toArray()" begin="%{#count}" end="%{(#count + #rows - 1) < #size?(#count + #rows - 1):(#size-1)}" var="i">
+					<ul class="list-unstyled" align-self="top">
+					<li class="top"><a href="#"><s:property value="#i"/></a></li>
+					<s:set var="count" value="%{#count+1}"/>
+					<s:iterator value="categories.get(#i)">
+					<li><a href="get.action?category_Name=<s:property value="category_Name"/>"><s:property value="category_Name"/></a></li>
+					</s:iterator>
+					</ul>
+					</s:iterator>
+					</s:if>
+					</td>
+					</s:iterator>
+					
+					</tr>
+					</table>
 							</li>
     
 	<li>
@@ -133,12 +193,7 @@
 		<input type="text" class="form-control" placeholder="Search" id="searchInput">
 		</div>
 		<div class="col-sm-3">
-     	 <select class="form-control" id="sel1">
-        	<option>All categories</option>
-        	<option>Electronics</option>
-        	<option>mobiles</option>
-        	<option>laptops</option>
-      	</select>
+	     	 <s:select name="category" id="main" list="categories.keySet()" headerKey="-1" headerValue="select category" /> 
       	</div>
       	<div class="col-sm-3" style="margin-left:0px">
 		<button type="submit" class="btn btn-default" id="search"><strong>Search</strong></button>

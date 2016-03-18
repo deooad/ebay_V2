@@ -9,35 +9,56 @@ import com.opensymphony.xwork2.ModelDriven;
  * Registration Action
  *
  */
-public class emailCheckAction extends ActionSupport implements ModelDriven<RegistrationModel>{
+public class emailCheckAction extends ActionSupport {
 
-	RegistrationModel registrationModel=new RegistrationModel();
-
-	public RegistrationModel getRegistrationModel() {
-		return registrationModel;
+	
+	
+	boolean status;
+	String email_first;
+	String username;
+	
+	public String getUsername() {
+		return username;
 	}
 
-	public void setRegistrationModel(RegistrationModel registrationModel) {
-		this.registrationModel = registrationModel;
+	public void setUsername(String username) {
+		this.username = username;
 	}
+
+	public String getEmail_first() {
+		return email_first;
+	}
+
+	public void setEmail_first(String email_first) {
+		this.email_first = email_first;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+
+
+	
 	
 	RegistrationService registrationService=new RegistrationService();
 	
 	public String execute() {
-		System.out.println(registrationModel);
-		boolean status=registrationService.register(registrationModel);	
 		
-		if(status)
-			return SUCCESS;
-		
-		else
-			return ERROR;
+		 setUsername(registrationService.checkEmailService(getEmail_first()));	
+		 System.out.println(isStatus());
+	
+		return SUCCESS;
 	}
 
-	@Override
-	public RegistrationModel getModel() {
-		// TODO Auto-generated method stub
-		return registrationModel;
-	}
+//	@Override
+//	public RegistrationModel getModel() {
+//		// TODO Auto-generated method stub
+//		return registrationModel;
+//	}
 
 }

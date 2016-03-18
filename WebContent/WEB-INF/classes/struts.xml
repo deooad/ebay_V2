@@ -4,7 +4,7 @@
 
 <struts>
 		
-   <package name="default" extends="struts-default">
+   <package name="default" extends="struts-default,json-default">
    
    <!-- edited by sindhu and sudha  -->
       <result-types>
@@ -17,7 +17,7 @@
         
       </action>
      
-      <action name="start" class="entryAction.EntryAction">
+      <action name="start" class="ebay.iiitb.home.EntryAction">
     	  <result name="success" type="tiles">starttile</result>
       </action>
       
@@ -25,13 +25,21 @@
     	  <result name="success" >/Registersuccess.jsp</result>
     	  <result name="error"  >/Registerfailure.jsp</result>
       </action>
+    
+      <action name="headerr" class="ebay.iiitb.home.HeaderAction">
+    	  <result name="success" >/header.jsp</result>
+      </action>
+    
        <action name="emailcheckAction" class="ebay.iiitb.registration.emailCheckAction">
     	 <result type="json">
         <param name="excludeNullProperties">true</param>
         <param name="noCache">true</param>
 	   </result>
 	   </action>
- 
+
+
+
+
  <!-- Done  -->
    </package>
    

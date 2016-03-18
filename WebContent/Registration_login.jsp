@@ -106,11 +106,10 @@
   });
   function checkemail(obj){
 		$.getJSON('emailcheckAction',{'email_first': obj.value}, function(data) {
-					
-			alert("Email already exists .Please enter another email");
-				
-				
 			
+		  if(data.username!=null)
+				alert("Email ID already exists!");
+				
 		});
 }
   </script>

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html lang="en">
 <head>
   <title>Bootstrap Case</title>
@@ -11,8 +13,8 @@
   	#col2{
   		padding: 20px;
   		padding-left: 40px;
-  		
   		border-color :gray;
+  		font-size:40%;
   	}
   	#col{
   		padding: 20px;
@@ -20,20 +22,30 @@
   		
   		border-color :gray;
   	}
+  #listitems{
+
+  font-size: 225%;
+  }
   </style>
 </head>
 <body>
   <div class="row">
   	<div class="col-sm-2" id="col2">
-  		<a href="#" id="deals">Deals</a><br><br>
-  		<a href="#" id="mobile">Mobile & Accessories</a><br><br>
-  		<a href="#" id="laptop">Laptops & Tablets</a><br><br>
-  		<a href="#" id="fashion">Fashion</a><br><br>
-  		<a href="#" id="home">Home & Living</a><br><br>
-  		<a href="#" id="camera">Cameras</a><br><br>
-  		<a href="#" id="television">Televisions</a><br><br>
-  		<a href="#" id="health">Health & Beauty</a><br><br>
-  		<a href="#" id="allE">All Electronics</a><br><br>
+  		<s:set var="size" value="categories.size()"/>
+					<s:set var="rows" value="categories.size()/3"/> 
+					<s:set var="count" value="0"/>
+					<s:set var="size" value="categories.size()"/>	
+					<s:iterator value="categories.keySet().toArray()">		
+					<s:if test="%{#count < #size}">
+					<s:iterator value="categories.keySet().toArray()" begin="%{#count}" end="%{(#count + #rows - 1) < #size?(#count + #rows - 1):(#size-1)}" var="i">
+					<ul class="list-unstyled"  align-self="top">
+					<li ><a id="listitems" href="get.action?category_Name=<s:property value="#i"/>"><s:property value="#i"/></a></li>
+					<s:set var="count" value="%{#count+1}"/>
+					</ul>
+					</s:iterator>
+					</s:if>
+					
+					</s:iterator>
   	</div>
     <div class="col-sm-6" id="col">
     
