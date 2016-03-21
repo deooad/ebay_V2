@@ -171,7 +171,7 @@
     </div>
   <div id="login" style="display:inline" class="tab-pane fade in active">   
         
-          <form action="/" method="post">
+          <form action="login" method="post">
          
          <input type="text" id="emailruser" name="email_user" placeholder="Email" required="required"/> 
     

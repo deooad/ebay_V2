@@ -48,8 +48,7 @@
 
 		<action name="login" class="ebay.iiitb.login.LoginAction">
     	  <result name="success" type="chain">start</result>
-    	
-      </action>
+    	</action>
       
        <action name="loginafterregister" class="ebay.iiitb.login.LoginAfterRegisterAction">
     	  <result name="success" type="chain">start</result>
