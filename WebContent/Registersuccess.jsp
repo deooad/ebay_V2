@@ -55,11 +55,12 @@
 <br>
 <div class="container" >
  <strong style="font-size:20px; color:rgb(0, 204, 0)"><span class="glyphicon glyphicon-ok-circle" style="font-size:50px ;color:rgb(0, 204, 0); float:left; margin-bottom:10px;margin-top:10px"></span>
- <strong style="margin-top:40px"> Welcome to eBay <s:property value="fname"/> !  </strong></strong><br><br>
+ <strong style="margin-top:40px"> Welcome to eBay  <s:property value="fname"/>! </strong></strong><br><br>
  <strong style="font-size:10px;" >We've created a unique username for you:<s:property value="username"/> </strong>
  </div>
  <div class="container" >
- <form action="start">
+ <form action="loginafterregister">
+ <input type="hidden" name="username" value="<s:property value="username"/>"></input>
  <button type="submit" id="but" class="button button-block" style="width:25%"><strong>Continue</strong></button>
  </form> 
 </div>

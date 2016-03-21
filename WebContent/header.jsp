@@ -4,7 +4,7 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html lang="en">
 <head>
-  <title>Bootstrap Case</title>
+  <title>eBay</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -150,7 +150,7 @@
 <body>
 	<nav class="navbar navbar-default" style="box-shadow:10px 10px 5px #D8D8D8;margin-top:0px;margin-bottom:0px">
  	<div id="logo">
-    <img src="image/ebay.jpg"/>
+   <a href="start.action"><img src="image/ebay.jpg" /></a> 
     </div>
     <ul class="nav navbar-nav">
     	<li id="lregister"><a href="#" id="aregister"style="margin-right:0px;paddin-right:0px" >Register(seller)</a></li>
@@ -226,8 +226,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        	<li id="lsignin"><small>Hi! <a href="Registration_login.jsp">Sign In</a> or <a href="Registration_login.jsp" id="asignin">Register</a>|</small></li>
-
+         <s:if test="#session.email==null">
+         <li id="lsignin"><small>Hi! <a href="Registration_login.jsp">Sign In</a> or <a href="Registration_login.jsp" id="asignin">Register</a>|</small></li>
+         	
         	<li id="ldeal"><small><a href="#" id="adeals">Deals</a>|</small></li>
      
         	<li id="lsells"><small><a href="#" id="asells">Sells</a>|</small></li>
@@ -236,9 +237,36 @@
         	<li id="lcontacts"><small><a href="#" id="acontacts">Help & Contacts</a>|</small></li>
        
         	<li id="ltrack"><small><a href="#" id="atrack">Track My Order</a></small></li>
+		 </s:if>
+	 	<s:else>
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="lsignin"><small>Hi ! <s:property value="#session.username"/></small>|</a>
+      				<ul class="dropdown-menu">
+      				    <li><img src="fonts/profile.png" style="font-size:60px"><small><a href="#"><s:property value="#session.username"/></a></small></li>
+       	 				<li><a href="#">My Collections</a></li>
+        				<li><a href="#">Account and settings</a></li>
+        				<li><a href="logout.action">Logout</a></li>                        
+      				</ul>	 
+      					<li id="ldeal"><small><a href="#" id="adeals">Deals</a>|</small></li>
+     
+        	<li id="lsells"><small><a href="#" id="asells">Sells</a>|</small></li>
+        
+       
+        	<li id="lcontacts"><small><a href="#" id="acontacts">Help & Contacts</a>|</small></li>
+       
+        	<li id="ltrack"><small><a href="#" id="atrack">Track My Order</a></small></li>
+		 </s:else> 
+		 <!-- 	
+        	<li id="ldeal"><small><a href="#" id="adeals">Deals</a>|</small></li>
+     
+        	<li id="lsells"><small><a href="#" id="asells">Sells</a>|</small></li>
+        
+       
+        	<li id="lcontacts"><small><a href="#" id="acontacts">Help & Contacts</a>|</small></li>
+       
+        	<li id="ltrack"><small><a href="#" id="atrack">Track My Order</a></small></li> -->
 	 </ul>
 	 <ul class="nav navbar-nav pull-right" style="margin-right:30px">
-	 		<li id="lcart"><a href="#" id="acart"><span class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></a></li>
+	 		<li id="lcart"><a href="#" id="acart"><span class="glyphicon glyphicon-shopping-cart" style="font-size:15px"></span></a></li>
 
 	 		
 
