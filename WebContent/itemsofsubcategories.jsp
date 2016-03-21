@@ -66,10 +66,13 @@
     font-size: 16px;
 }
 
-  #image{
-  	width:240px;
-  	height:160px;
-  }
+  img {
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
   #label{
       font-size: 16px;
 	  font-weight: bold;
@@ -98,22 +101,19 @@
     		 <div class="box">
     		 <label id = label2>Top Brands</label>
     		 </div>
-    		 <div class="checkbox">
-  				<label id =checkbox><input type="checkbox" value="">Option 1</label>
-			 </div>
-			 <div class="checkbox">
- 				 <label id =checkbox><input type="checkbox" value="">Option 2</label>
-			 </div>
-			 <div class="checkbox">
- 				 <label id =checkbox><input type="checkbox" value="">Option 3</label>
-			 </div>
-			 <div class="checkbox">
- 				 <label id =checkbox><input type="checkbox" value="">Option 4</label>
-			 </div>
-			 <div class="checkbox">
- 				 <label id =checkbox><input type="checkbox" value="">Option 5</label>
-			 </div>
-			 <br>
+    		  
+  				
+  			
+  				<s:iterator  value="brands.toArray()" var="i">
+	  				<div class="checkbox">
+	  					<label><input type="checkbox" value=""><s:property value="#i"/> </label>
+	  				</div>
+	  		
+	  	
+	  			</s:iterator>
+  			
+  			
+    		 			 <br>
 
 			 <div class="box">
     		 <label id = label2>Operating System</label>
@@ -176,7 +176,71 @@
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                 
-                                <img alt="slide12" src="<s:property value="nestedsubcategory[2][#count].picture"/>"width="250" height="250">
+                                <img alt="slide12" src="<s:property value="nestedsubcategory[2][#count].picture"/>">
+                                
+                                 <div class="caption">
+                                 <h3>Product label</h3>   
+								 <p>Item Id : <s:property value="nestedsubcategory[2][#count].i_surkey"/>  </p>
+								 <p>Name :  <s:property value="nestedsubcategory[2][#count].item_Name"/>   </p>
+								 <p>Cost :	<s:property value="nestedsubcategory[2][#count].price"/>  </p><br/>
+										    
+                                     <p> <a href="siteunderconstructionredirect.action" class="btn btn-default" role="button">Buy</a></p>
+                                  
+                                  </div>
+                                </div>        
+                            </div>
+                            <s:set var="count" value="%{#count+1}"/>
+                            </s:iterator>
+                               </s:if>
+                               </s:iterator> 
+                            </div>
+                            </div>
+                         
+                         
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+                
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol> 
+                </div> <div class = "col-sm-10">
+                 
+            </div><!-- End Carousel -->        
+      		
+             <div class = "col-sm-10">
+      <!-- Carousel
+            ================================================== -->           
+      <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                  		
+                   
+                         <s:set var="count" value="0"/>
+                                <s:set var="size" value="nestedsubcategory[2].size()"/>
+                                <s:set var="rows" value="nestedsubcategory[2].size()/3"/>
+                       <s:iterator value="nestedsubcategory[2]">
+                         <s:if test="%{#count == 0}">
+                         <div class="item active">
+                         </s:if>
+                         <s:else>
+                         <div class="item">
+                         </s:else>
+                        <div class="row">
+                        <s:if test="%{#count < #size}">
+                        <s:iterator value = "nestedsubcategory[2]" begin="%{#count}" end="%{(#count +2) < #size?(#count + 2):(#size-1)}">
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                
+                                <img alt="slide12" src="<s:property value="nestedsubcategory[2][#count].picture"/>">
                                 
                                  <div class="caption">
                                  <h3>Product label</h3>   
@@ -216,8 +280,6 @@
                 </div>
                  
             </div><!-- End Carousel -->        
-      		
-            
             
                 <div class = "col-sm-12">
                 	                                
