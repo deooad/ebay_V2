@@ -39,7 +39,7 @@
   	<div class="col-sm-6">
   	
   		<ul class="list-unstyled">
-  			<li class ="title">Top Cateogries</li>
+  			<li class ="title">Top Categories</li>
   			
   			<s:iterator  value="subCategories.subCatlist.toArray()" var="i">
 	  		<li><a id="listitems" href="get.action?category_Name=<s:property value="#i"/>"><s:property value="#i"/></a></li> 

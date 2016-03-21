@@ -24,4 +24,8 @@
 	<definition name="dealstile" extends="baseLayout" >
 	   	<put-attribute name="body" value="/displaytopcategories.jsp" />
 	</definition>
+	
+	<definition name="itemstile" extends="baseLayout" >
+	   	<put-attribute name="body" value="/itemsofsubcategories.jsp" />
+	</definition>
 </tiles-definitions>

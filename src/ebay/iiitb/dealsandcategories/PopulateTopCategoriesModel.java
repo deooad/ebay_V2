@@ -2,7 +2,7 @@ package ebay.iiitb.dealsandcategories;
 
 import java.util.ArrayList;
 
-public class PopulateDealsModel {
+public class PopulateTopCategoriesModel {
 
 	public ArrayList<String> subCatlist = new ArrayList<String>();
 //	private ArrayList<String> filter1 = new ArrayList<String>();

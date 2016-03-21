@@ -30,8 +30,12 @@
     	  <result name="success" >/header.jsp</result>
       </action>
       
-       <action name="get" class="ebay.iiitb.dealsandcategories.PopulateDealsAction">
+       <action name="get1" class="ebay.iiitb.dealsandcategories.PopulateTopCategoriesAction">
     	  <result name="success" type="tiles">dealstile</result>
+      </action>
+    
+     <action name="get" class="ebay.iiitb.PopulateItems.SubCategoryAction">
+    	  <result name="success" type="tiles">itemstile</result>
       </action>
     
     

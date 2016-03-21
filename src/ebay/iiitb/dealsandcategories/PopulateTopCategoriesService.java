@@ -11,21 +11,21 @@ import ebay.iiitb.DBUtil.DbConnection;
 
 
 
-public class PopulateDealsService {
+public class PopulateTopCategoriesService {
  
 	String category_Name;
 	DbConnection db = new DbConnection();
 	Connection con = db.getConnection();	
-	public PopulateDealsService(String category_Name) {
+	public PopulateTopCategoriesService(String category_Name) {
 		
 		this.category_Name = category_Name;
 		System.out.println(" In const" + category_Name);
 	}
 	
-	public PopulateDealsModel getSubCategories()
+	public PopulateTopCategoriesModel getSubCategories()
 	{
 		int cat_id = 0;
-		PopulateDealsModel populateDealsModel = new PopulateDealsModel();
+		PopulateTopCategoriesModel populateDealsModel = new PopulateTopCategoriesModel();
 		ArrayList<String> subCatList = new ArrayList<String>();
 		String getsubCategories = "select * from category where parent = ?";
 		String getCategoryId = "select * from category where name = ?";

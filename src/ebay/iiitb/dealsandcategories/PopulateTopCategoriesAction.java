@@ -1,18 +1,20 @@
 package ebay.iiitb.dealsandcategories;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class PopulateDealsAction extends ActionSupport implements ModelDriven<PopulateDealsModel>{
+public class PopulateTopCategoriesAction extends ActionSupport implements ModelDriven<PopulateTopCategoriesModel>{
 
-    PopulateDealsModel subCategories;
-	public PopulateDealsModel getSubCategories() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	PopulateTopCategoriesModel subCategories;
+	public PopulateTopCategoriesModel getSubCategories() {
 		return subCategories;
 	}
 
-	public void setSubCategories(PopulateDealsModel subCategories) {
+	public void setSubCategories(PopulateTopCategoriesModel subCategories) {
 		this.subCategories = subCategories;
 	}
 
@@ -23,7 +25,7 @@ public class PopulateDealsAction extends ActionSupport implements ModelDriven<Po
 	
 	public String execute()
 	{
-		PopulateDealsService populateDealsService = new PopulateDealsService(getCategory_Name());
+		PopulateTopCategoriesService populateDealsService = new PopulateTopCategoriesService(getCategory_Name());
 		System.out.println(getCategory_Name());
 		subCategories = populateDealsService.getSubCategories();
 		System.out.println(subCategories.subCatlist.get(0));
@@ -39,7 +41,7 @@ public class PopulateDealsAction extends ActionSupport implements ModelDriven<Po
 	}
 
 	@Override
-	public PopulateDealsModel getModel() {
+	public PopulateTopCategoriesModel getModel() {
 		// TODO Auto-generated method stub
 		return subCategories;
 	}
