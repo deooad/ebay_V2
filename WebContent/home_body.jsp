@@ -39,7 +39,7 @@
 					<s:if test="%{#count < #size}">
 					<s:iterator value="categories.keySet().toArray()" begin="%{#count}" end="%{(#count + #rows - 1) < #size?(#count + #rows - 1):(#size-1)}" var="i">
 					<ul class="list-unstyled"  align-self="top">
-					<li ><strong ><a id="listitems" href="get1.action?category_Name=<s:property value="#i"/>"><s:property value="#i"/></a></strong></li>
+					<li ><strong ><a  id="listitems" href="get1.action?category_Name=<s:property value="#i"/>"><s:property value="#i"/></a></strong></li>
 					<s:set var="count" value="%{#count+1}"/>
 					</ul>
 					</s:iterator>

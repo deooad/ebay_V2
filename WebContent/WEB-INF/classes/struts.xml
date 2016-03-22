@@ -57,7 +57,13 @@
         <action name="logout" class="ebay.iiitb.logout.Logout">
     	  <result name="success" type="tiles">logouttile</result>
        </action>
-
+       
+        <action name="getitem" class="ebay.iiitb.itemdetails.ItemDisplayAction">
+    	  <result name="success" type="tiles">itemdetailsstile</result>
+       </action>
+		<action name="buynow" class="ebay.iiitb.buynow.BuyNow">
+    	  <result name="success" type="chain">start</result>
+       </action>
 
 
  <!-- Done  -->

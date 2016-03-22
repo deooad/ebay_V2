@@ -30,4 +30,7 @@
 	<definition name="itemstile" extends="baseLayout" >
 	   	<put-attribute name="body" value="/itemsofsubcategories.jsp" />
 	</definition>
+	<definition name="itemdetailsstile" extends="baseLayout" >
+	   	<put-attribute name="body" value="/ItemDetails.jsp" />
+	</definition>
 </tiles-definitions>

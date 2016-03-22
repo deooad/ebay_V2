@@ -89,13 +89,16 @@
   	font-weight: bold;
 	color: #333;
   } 
+  #rowid{
+   height: 720px;
+  }
   </style>
 </head>
 <body>
 	<div class="tab-content" id="filter1">
     <div role="tabpanel" class="tab-pane active" id="Review-Order">
-    <div class="container">
-    	<div class="row">
+    <div class="container" id="rowid">
+    	<div class="row" >
     		<div class="col-sm-2">
     		 <label id = label>Filter by</label><br>
     		 <div class="box">
@@ -176,7 +179,7 @@
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                 
-                                <img alt="slide12" src="<s:property value="nestedsubcategory[2][#count].picture"/>">
+                               <a href="getitem.action?i_surkey=<s:property value="nestedsubcategory[2][#count].i_surkey"/>"> <img alt="slide12" src="<s:property value="nestedsubcategory[2][#count].picture"/>"></a>
                                 
                                  <div class="caption">
                                  <h3>Product label</h3>   
@@ -191,35 +194,35 @@
                             </div>
                             <s:set var="count" value="%{#count+1}"/>
                             </s:iterator>
-                               </s:if>
-                               </s:iterator> 
+                        </s:if>
+                            </div>
+                            </s:iterator> 
                             </div>
                             </div>
                          
-                         
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+                           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
                 
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol> 
-                </div> <div class = "col-sm-10">
-                 
-            </div><!-- End Carousel -->        
+               
+                        </div>
+                    
+		
+      		</div>
       		
-             <div class = "col-sm-10">
-      <!-- Carousel
-            ================================================== -->           
+      	<!-- Carousel ================================================== -->  
+      <div class = "col-sm-10">
+               
       <div id="myCarousel" class="carousel slide">
                 <div class="carousel-inner">
                   		
@@ -254,62 +257,37 @@
                                 </div>        
                             </div>
                             <s:set var="count" value="%{#count+1}"/>
-                            </s:iterator>
+                         </s:iterator>
                                </s:if>
+                               </div>
                                </s:iterator> 
                             </div>
+		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+		  </a>
+				                
+		                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol> 
                             </div>
                          
                          
                         </div>
                     </div>
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-                
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol> 
+                     </div>
+
                 </div>
                  
-            </div><!-- End Carousel -->        
-            
-                <div class = "col-sm-12">
-                	                                
-     
-            
-              
-                    </div>
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-                
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol> 
-                </div>
-                
-                </div>
-            </div><!-- Container -->
-            <br>
-            <br>
-            <br>
-         </div>
-     </div>
+           <!-- End Carousel -->        
+   
+
     		
 </body>	
 

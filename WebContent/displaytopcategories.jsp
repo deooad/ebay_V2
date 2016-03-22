@@ -9,38 +9,31 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <style type="text/css">
- .title {
-    padding: 0 0 10px;
-    color: #555;
-    border-bottom: 1px solid #dadada;
-    font-weight: bold;
-    font-size: 12px;
-}
- .sub-cats{
-    float: left;
-    padding: 30px 30px 10px 40px;
-    height: 252px;
-    overflow: hidden;
-}
-.col {
-    width: 129px;
-    float: left;
-    padding-right: 40px;
-}
+
  #listitems{
 	
 	  font-size: 100%;
 	  }
+	  #maindiv{
+	      width:100%;
+	      height:360px;
+	      padding-top:10px;
+	      padding-left:230px;
+	      margin-left:300px;
+	      border-left:300px;'
+          margin: auto;
+	     
+	  }
   </style>
   </head>
   <body>
-  	<div class ="sub-cats">
+  	<div class ="container"  id="maindiv">
   	<div class ="row">
-  	<div class="col-sm-6">
+  	<div  >
   	
-  		<ul class="list-unstyled">
+  		<ul class="list-unstyled" >
   			<li class ="title">Top Categories</li>
-  			
+  			<hr style="border-bottom-style: solid;border-width: 2px;color: gray;">
   			<s:iterator  value="subCategories.subCatlist.toArray()" var="i">
 	  		<li><a id="listitems" href="get.action?category_Name=<s:property value="#i"/>"><s:property value="#i"/></a></li> 
 	  		
@@ -48,30 +41,8 @@
 	  		</s:iterator>
   		</ul>
   	</div>
-  	<div class="col-sm-6">
-  		<ul>
-  			<li class ="title">More Cateogries</li>
-  			<br>
-  			<li class ="">subCategories2</li>
-  	    	<li class ="">subCategories13</li>
-  		</ul>
-  	
-   </div>	
+  
    </div>
   </div>
-  
-  	<div class ="row">
-  	<!-- 
-  	<div class="col-sm-6">
-  		Top Cats
-  		<s:iterator  value="subCategories">
-  		 <s:iterator value="subCatlist">
-  		 <s:property  value ="subCatlist[0]"/>
-  		 </s:iterator>
-  		</s:iterator>
-  	
-   </div> -->	
-   </div>
-  
-  
+    
 </body>
